@@ -41,8 +41,4 @@ class UserDetailApi(views.APIView):
             return response.Response(status=status.HTTP_403_FORBIDDEN)
 
 
-class UsersApi(views.APIView):
-    permission_classes = (permissions.IsAuthenticated,)
-    def get(self, request):
-        users = services.get_all_users()
-        return response.Response(users)
+

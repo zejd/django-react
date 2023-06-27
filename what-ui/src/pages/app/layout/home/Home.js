@@ -74,8 +74,6 @@ export function Home() {
 
     const rowSelection = {
         onSelect: (product, selected) => {
-            console.log(product)
-            console.log(selected)
             product.selected = selected;
             dispatch(updateProduct(product));
             setSelectedRecordKeys(products.map((product, i) => product.selected ? i+1 : 0));

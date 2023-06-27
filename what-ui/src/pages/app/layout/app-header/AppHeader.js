@@ -1,6 +1,4 @@
 import { Header } from "antd/lib/layout/layout";
-//import {useAppSelector} from "../../../../redux/hooks";
-//import {selectLoggedInUser} from "../../../../redux/selectors/authSelector";
 import {useNavigate} from "react-router-dom";
 import {APP, LOGIN} from "../../../../constants/RoutePathConstants";
 import {getUserById, logout} from "../../../../redux/actions/AuthActions";
@@ -13,7 +11,6 @@ import jwtDecode from "jwt-decode";
 
 
 export function AppHeader() {
-  //  const loggedInUser = useAppSelector(selectLoggedInUser);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const token = localStorage.getItem(JWT_TOKEN_KEY);

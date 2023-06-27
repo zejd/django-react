@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  backend:
+    build: ./api
+    ports:
+      - "8000:8000"
+    command: bash -c "python manage.py makemigrations &&
+                      python manage.py migrate &&
+                      python manage.py runserver 0.0.0.0:8000"
+    restart: always
+
+  frontend:
+    build: ./what-ui
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./what-ui:/what-ui
+    depends_on:
+      - backend
+    restart: always

@@ -60,11 +60,6 @@ def user_email_selector(email: str) -> User:
 
     return user
 
-def get_all_users() -> list[User]:
-    users = models.User.objects.all()
-    serializer = user_serializer.UserSerializer(users, many=True)
-    return serializer.data
-
 
 def get_user_by_id(user_id: str) -> User:
     user = models.User.objects.get(pk=user_id)
