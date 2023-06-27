@@ -1,5 +1,10 @@
 Django REST Framework - ReactJS application.
-Steps to run the backend app:
+
+If you are using Docker, it is enough to run:
+
+docker-compose up -d
+
+Steps to run the backend app (without docker):
 
 1. Clone the repository
 
